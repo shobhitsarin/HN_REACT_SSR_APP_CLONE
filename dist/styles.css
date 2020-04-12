@@ -1,0 +1,104 @@
+
+
+body  { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#000000; margin:0; }
+
+.black { color:#000000}
+.orange { color:#ff6600}
+.lightbrown { color:#b66f40}
+.darkbrown { color:#492711}
+
+
+.header {
+    background-color:#ff6600;
+    display: flex;
+    padding:10px 6px;
+}
+.navigation {    
+  display: flex;
+  line-height: 15pt;
+}
+.headerLogo {
+    border:1px white solid;
+    height: 18px;
+    width:18px;
+}
+.main {
+  width: 100%; /* The width is 100%, when the viewport is 750px or smaller */
+  margin:0;  
+}
+
+.home {
+    background-color: rgb(246, 246, 239);
+    padding-top: 20px;
+}
+ul { margin:0px }
+li { display: inline; }
+a {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+.moreLinkCta {
+  height:35px;
+}
+.moreLink { 
+  color:#ff6600;
+}
+.moreLink:visited { 
+  color:#ff6600;
+}
+a:visited {
+  color: #ffffff;
+}
+
+.itemrow { padding-right: 5px; display: flex; flex-direction: row}
+.itemrow:nth-child(even) {background: #e6e6df}
+.itemBox { padding: 5px 10px; display: flex; flex-direction: row}
+.voteBox {  display: flex;  }
+.storyDetailBox { padding-right: 5px; display: flex; flex-direction: column}
+.titleBox {  display: flex;  }
+.otherDetailBox {  display: flex; flex-direction: column; font-size: 9pt; color: #828282;  }
+.hostBox {  display: flex;  }
+.timeAgoBox {  display: flex;  }
+.timeAgo {    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+.comments { text-align: right; padding-right: 15px; min-width: 35px;  line-height: 14pt;   font-size: 9pt;}
+.upvotes { text-align: right; padding-right: 5px; min-width: 25px;  line-height: 14pt;   font-size: 9pt;}
+.upvotesBtn { 
+  cursor: pointer;
+  width: 0;
+  padding-top: 5px;
+  height: 0;
+  border: 0 solid transparent;
+  border-right-width: 4px;
+  border-left-width: 3px;
+  border-bottom: 7px solid rgb(130, 130, 130);
+}
+.author {  color: #000000;  }
+.title { font-size: 10pt; line-height: 13pt; padding-right: 5px;  }
+.hideBox { padding-right: 10px;  }
+.hideCta { 
+  color: #000000;   
+  cursor: pointer;
+}
+/* For Larger Mobiles and above  */
+@media screen and (min-width: 491px) {
+  .otherDetailBox {
+    display: flex; flex-direction: row
+  }
+}
+/* For Table & Desktop */
+@media screen and (min-width: 751px) {
+  .itemBox { padding: 5px 25px;}
+
+  .comments { padding-right: 30px;}
+}
+/* For Desktop Only*/
+@media screen and (min-width: 1201px) {
+.storyDetailBox {  display: flex; flex-direction: row }
+.home {  height: 100vh; 
+}
+}
+
+/*# sourceMappingURL=styles.css.map*/

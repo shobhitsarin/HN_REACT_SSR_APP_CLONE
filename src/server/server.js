@@ -30,7 +30,7 @@ ROUTES_LIST.forEach(({path, component,pageId}) => {
     })
   });
 
-app.listen( 3001 );
-console.log("App Running on localhost:3001")
+app.listen( process.env.PORT || 3001 );
+console.log("App Running on heoroku port or localhost:3001")
 
 

@@ -1,8 +1,8 @@
 {
-  "name": "Think",
+  "name": "HN_REACT_SSR_CLONE",
   "version": "1.0.0",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress",
+    "build": "NODE_ENV=production webpack --progress",
     "start": "npm-run-all --parallel server client",
     "eslint": "eslint src/ --ext .js,.jsx",
     "server": "node ./src/server",

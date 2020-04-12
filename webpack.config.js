@@ -1,5 +1,12 @@
 const dev = process.env.NODE_ENV !== "production";
 const path = require( "path" );
+const MiniCssExtractPlugin = require( "mini-css-extract-plugin" );
+
+const plugins = [
+    new MiniCssExtractPlugin({
+        filename: "styles.css",
+    }),
+];
 
 module.exports = {
     mode: dev ? "development" : "production",
@@ -21,11 +28,21 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader",
+                ],
+            },
         ],
     },
     output: {
         path: path.resolve( __dirname, "dist" ),
         filename: "client.bundle.js",
-    }
+    },
+    plugins
 };

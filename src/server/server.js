@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import qs from 'qs';
 import { renderToString } from "react-dom/server";
 import React from 'react';
 import htmlTemplate from "../pages/_document";
@@ -10,21 +11,22 @@ import serialize from "serialize-javascript";
 const app = express();
 
 app.use( express.static( path.resolve( __dirname, "../../dist" ) ) );
+app.use( express.static( path.resolve( __dirname, "../../static" ) ) );
 
 ROUTES_LIST.forEach(({path, component,pageId}) => {
       app.get(path, ( req, res ) => {
           const {getInitialProps} = component;
-          let pageProps=null;
+          let getInitialPropsPromise=null;
           if(getInitialProps) {
-            pageProps = getInitialProps();
+            const reqParams = qs.parse(req.query)
+            getInitialPropsPromise =  getInitialProps(reqParams);
           }
-          const initialProps = serialize({pageId,pageProps}, { isJSON: true });
-       // Promise.all().then((pageProps) => {
+          Promise.all([getInitialPropsPromise]).then(([pageProps]) => {
+            const initialProps = serialize({pageId,pageProps}, { isJSON: true });
             const appComponent= (<App component={component} pageProps={pageProps} />);
             const appComponentString = renderToString(appComponent);
-            res.writeHead( 200, { "Content-Type": "text/html" } );
-            res.end( htmlTemplate( appComponentString,initialProps) );
-       // });
+            res.send(htmlTemplate(appComponentString,initialProps) );
+        });
     })
   });
 

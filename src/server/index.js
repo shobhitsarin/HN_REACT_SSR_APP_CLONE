@@ -3,6 +3,13 @@ require( "babel-register" )( {
     presets: [ "env" ],
     plugins: [
         "dynamic-import-node",
+        [
+            "css-modules-transform",
+            {
+                camelCase: true,
+                extensions: [ ".css", ".scss" ],
+            }
+        ],
     ],
 } );
 require( "./server" );

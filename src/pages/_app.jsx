@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import Header from '../components/common/organisms/header'
+import "../style/style.css";
 
 const App = ({component:Component, pageProps}) => (
-  <div>
-    <div>This is where header will come</div>
+  <div className='main'>
+    <Header />
     <Component pageProps={pageProps} />
   </div>
 )

@@ -4,5 +4,4 @@ node_js:
 before_install:
 - yarn
 script:
-- npm run build
-- npm run server
+- yarn build

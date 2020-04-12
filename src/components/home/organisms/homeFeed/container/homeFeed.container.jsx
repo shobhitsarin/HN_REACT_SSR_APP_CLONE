@@ -47,8 +47,8 @@ return {
  HomeContainer.getInitialProps = (reqParams) => {
   const defaultPage = 0;
   const pageId = parseInt(reqParams.page, 10) || defaultPage;
-  const hitsPerPage = 30;
-    // using front_page tag but it has 31 stories only, so won’t be able to show pagination correctly
+  const hitsPerPage = process.env.HITS_PER_PAGE || 25;
+    // using front_page tag but it has 30 stories only, so won’t be able to show pagination correctly, therefore keeping it as hitsPerPage 25
     const pageFeedUri = `${endpoints.getPageFeed.URI}?tags=front_page&page=${pageId}&hitsPerPage=${hitsPerPage}`
    return fetchDataAPI(pageFeedUri).then(result => {
      // check if data is valid

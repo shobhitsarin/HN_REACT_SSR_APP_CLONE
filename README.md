@@ -1,9 +1,12 @@
 # HN_REACT_SSR_APP_CLONE
 
+
 - Application is deployed on https://hn-react-ssr-app-clone.herokuapp.com/
 - Application is configured with Travis CI - 
 [![Build Status](https://travis-ci.com/shobhitsarin/HN_REACT_SSR_APP_CLONE.svg?branch=master)](https://travis-ci.com/shobhitsarin/HN_REACT_SSR_APP_CLONE)
 - Application shows 90+ lighthouse score for all Performance, Seo, Accessibility
+!['PWA Score'](/static/HN_REACT_SSR_CLONE_LIGHTHOUSE.png)
+
 
 
 Tech Stack -
@@ -16,6 +19,7 @@ Tech Stack -
 6) Responsive design system: Managed by flex-box
 7) Code Quality - Eslint and Prettier
 8) Performance - Lighthouse
+
 
 PS -
 
